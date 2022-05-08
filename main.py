@@ -29,15 +29,17 @@ def main():
     #ptext = file_data.upper()
 
     msg = 'HQKQWTFLCGETRTEGROYOEGXQDTFLQUTDLTEKTZQ'
-   # tab_msg = [['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']]
-   # freq_msg = []
     tab_msg = [[],[]]
+    
     for i in range(65,91):
         tab_msg[0].append(chr(i))
-        tab_msg[1].append(msg.count(chr(i)))
-        #freq_msg.append(msg.count(chr(i)))
-   # tab_msg.append(freq_msg)
+        tab_msg[1].append(round(msg.count(chr(i))/len(msg)*100,2))
+    
     print(tab_msg)
+    print(len(msg))
+
+    
+    
 
 if __name__=='__main__':
     main()
