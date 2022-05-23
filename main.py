@@ -1,4 +1,4 @@
-
+from statistics import pstdev
 
 def ceaser_encrypt(plaintext: str, key: int) -> str:
     cipher = ''
@@ -10,6 +10,15 @@ def ceaser_encrypt(plaintext: str, key: int) -> str:
             cipher += char
 
     return cipher
+
+def make_table(msg: str):
+    tab_msg = [[],[]]
+    
+    for i in range(65,91):
+        tab_msg[0].append(chr(i))
+        tab_msg[1].append(round(msg.count(chr(i))/len(msg)*100,2))
+    
+    return tab_msg
 
 
 def main():
@@ -29,15 +38,21 @@ def main():
     #ptext = file_data.upper()
 
     msg = 'HQKQWTFLCGETRTEGROYOEGXQDTFLQUTDLTEKTZQ'
-    tab_msg = [[],[]]
+   # tab_msg = [[],[]]
     
-    for i in range(65,91):
-        tab_msg[0].append(chr(i))
-        tab_msg[1].append(round(msg.count(chr(i))/len(msg)*100,2))
+   # for i in range(65,91):
+    #    tab_msg[0].append(chr(i))
+    #    tab_msg[1].append(round(msg.count(chr(i))/len(msg)*100,2))
     
-    print(tab_msg)
-    print(len(msg))
+    tab_msg = make_table(msg)
+    desvio = round(pstdev(tab_msg[1]),2)
 
+    tab_relacao = [[],[]]
+    maior = max(pt_freq[1])
+    print(pt_freq[1].index(max(pt_freq[1])))
+    
+
+    print(desvio)
     
     
 
