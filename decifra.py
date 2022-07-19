@@ -99,7 +99,7 @@ def main():
     key1 = sorted_letras_freq.keys()
     key2 = t.keys()
     relacao = dict(zip(key2,key1))
-    print(relacao)
+    
     attemp = attemp.translate(str.maketrans(relacao))
     print()
     print("Mensagem decriptada:  " + attemp)
